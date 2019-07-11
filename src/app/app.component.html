@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-8 mt-5 mx-auto">
+      <div class="col-md-12 col-lg-12 pull-right text-right pb-2">
+        <label>Search Data in Table :</label>
+        <input type="text" [(ngModel)]="searchText" (keyup)="applyFilter(userSearch.value)" placeholder="Filter" #userSearch/>
+      </div>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Sl No</th>
+            <th>Name</th>
+            <th>Rol No</th>
+            <th>Subject</th>
+            <th>Class</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of studentData let i = index">
+            <td> {{i+1}} </td>
+            <td> {{user.Name}} </td>
+            <td> {{user.Rol_no}} </td>
+            <td> {{user.Subject}} </td>
+            <td> {{user.Class}} </td>
+            <td> {{user.Total_no}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
